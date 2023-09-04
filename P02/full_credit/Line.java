@@ -1,4 +1,4 @@
-public class Colors {
+public class Line {
     private Color color;
     private double startx;
     private double starty;
@@ -6,7 +6,7 @@ public class Colors {
     private double endy;
     private double length;
 
-    public Colors(Color color, double startx, double starty, double endx, double endy)
+    public Line(Color color, double startx, double starty, double endx, double endy)
     {
         this.color = color;
         this.startx = startx;
@@ -24,11 +24,4 @@ public class Colors {
     {
         return color + " (" + startx + "," + starty + ")-(" + endx + "," + endy + ") has length " + length();
     }
-/* 
-    public static void main(String[] args)
-    {
-        Colors clr = new Colors(Color.ORANGE, 1.0, 2.0, 5.0, 6.0);
-
-        System.out.println(clr);
-    }*/
 }
