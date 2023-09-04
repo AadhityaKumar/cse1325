@@ -1,0 +1,1 @@
+public enum Color {ORANGE, PURPLE, PINK, BROWN}
