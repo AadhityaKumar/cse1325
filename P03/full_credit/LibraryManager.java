@@ -16,18 +16,35 @@ public class LibraryManager {
 
     System.out.println(example);
 
-    System.out.println("Which book would you like to check out today?");
-    int checkout = myInput.nextInt();
-    System.out.println("What is the name of the Patron?");
-    myInput.nextLine();
-    String patron_name = myInput.nextLine();
-    checkout = checkout - 1;
-    if(checkout < 0 || checkout > 2) throw new IllegalArgumentException("Invalid book number.");
-
-
-    example.checkOut(checkout, patron_name);
     
-    System.out.println(example);
+
+
+    try{
+        System.out.println("\nWhich book would you like to check out today?");
+        int checkout = myInput.nextInt();
+        System.out.println("What is the name of the Patron?");
+        myInput.nextLine();
+        String patron_name = myInput.nextLine();
+        checkout = checkout - 1;
+
+        if(checkout < 0 || checkout > 2) 
+            throw new IllegalArgumentException("Invalid book number.");   
+
+        example.checkOut(checkout, patron_name);
+        
+        System.out.println("\n");
+        System.out.println(example);
+
+
+ }
+    catch(Exception e)
+    {
+        System.err.println(e.getMessage());
+        System.exit(-1);
+    }
+
+
+    
     }
     
 }
