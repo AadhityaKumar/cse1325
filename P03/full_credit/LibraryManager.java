@@ -1,19 +1,33 @@
+import java.util.Scanner;
+
 public class LibraryManager {
     
-    Library example = new Library("Caljeet World");
+    public static void main(String[] args) {
+    Scanner myInput = new Scanner(System.in);
+    Library example = new Library("Caljeet World Library");
 
-    Publication uno = new Publication("Boble", "Aadhitya", 0000, null, null);
-    Publication dos = new Publication("Bihible", "Aadhitya", 0000, null, null);
-    Publication tres = new Publication("Panis", "Aadhitya", 0000, null, null);
+    Publication uno = new Publication("IT", "Stephen King", 1986, null, null);
+    Publication dos = new Publication("Harry Potter and the Philosopher's Stone", "JK Rowling", 1997, null, null);
+    Publication tres = new Publication("Diary of a Wimpy Kid", "Jeff Kinny", 2007, null, null);
 
     example.addPublication(uno);
     example.addPublication(dos);
     example.addPublication(tres);
 
+    System.out.println(example);
 
+    System.out.println("Which book would you like to check out today?");
+    int checkout = myInput.nextInt();
+    System.out.println("What is the name of the Patron?");
+    myInput.nextLine();
+    String patron_name = myInput.nextLine();
+    checkout = checkout - 1;
+    if(checkout < 0 || checkout > 2) throw new IllegalArgumentException("Invalid book number.");
+
+
+    example.checkOut(checkout, patron_name);
     
-    system.out.println(example);
-
-    //Ask how to add publications.
+    System.out.println(example);
+    }
     
 }

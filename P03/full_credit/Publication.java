@@ -1,4 +1,6 @@
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Date;
 
 public class Publication {
     private String title;
@@ -14,24 +16,29 @@ public class Publication {
         this.copyright = copyright;
         this.loanedTo = loanedTo;
         this.dueDate = dueDate;
+
+        if(copyright < 1900 || copyright > 2023) throw new IllegalArgumentException("Invalid copyright year.");
     }
 
-    public checkOut(String patron)
+    public void checkOut(String patron)
     {
-        dueDate = currentLocalDateTime.plusDays(14);
+        dueDate = LocalDate.now();
+        dueDate = dueDate.plusDays(14);
         loanedTo = patron;
     }
 
     @Override
     public String toString()
     {
-        if(loanedTo = NULL)
+        
+        if(loanedTo == null)
         {
-            return title + author + "copyright" + copyright;
+        return " \n" + title + ", " + author + ", " + "copyright " + copyright;
         }
         else
         {
-            return title + author + "copyright" + copyright + "loaned to:" + loanedTo + "until" + dueDate;
+        return "\n" + title + ", " + author + ", " + "copyright " + copyright + ", " + "loaned to: " + loanedTo + " until " + dueDate;
         }
+
     }
 }
