@@ -33,11 +33,11 @@ public class Publication {
         
         if(loanedTo == null)
         {
-        return " \n" + title + ", " + author + ", " + "copyright " + copyright;
+        return title + ", " + author + ", " + "copyright " + copyright;
         }
         else
         {
-        return "\n" + title + ", " + author + ", " + "copyright " + copyright + ", " + "loaned to: " + loanedTo + " until " + dueDate;
+        return title + ", " + author + ", " + "copyright " + copyright + ", " + "loaned to: " + loanedTo + " until " + dueDate;
         }
 
     }

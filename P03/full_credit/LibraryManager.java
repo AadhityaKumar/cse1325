@@ -4,7 +4,7 @@ public class LibraryManager {
     
     public static void main(String[] args) {
     Scanner myInput = new Scanner(System.in);
-    Library example = new Library("Caljeet World Library");
+    Library example = new Library("Caljeet World Library", "\n", 0);
 
     Publication uno = new Publication("IT", "Stephen King", 1986, null, null);
     Publication dos = new Publication("Harry Potter and the Philosopher's Stone", "JK Rowling", 1997, null, null);
@@ -42,6 +42,7 @@ public class LibraryManager {
         System.err.println(e.getMessage());
         System.exit(-1);
     }
+    
 
 
     
