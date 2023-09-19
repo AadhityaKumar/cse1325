@@ -1,6 +1,7 @@
 package library;
+
 /**
- * Models a Complex number.
+ * Simulates a library.
  *
  * @author             Aadhitya Kumar
  * @version            1.0
@@ -28,32 +29,67 @@ public class Library {
         this.checker = checker;
     }
 
+    /**
+     * Adds a publication to the ArrayList.
+     *
+     * @param publication            the publication being added
+     * @since              1.0
+     */
     public void addPublication(Publication publication)
     {
         publications.add(publication);
     }
     
+
+     /**
+     * Adds a patron to the ArrayList.
+     *
+     * @param patron            the patron being added
+     * @since              1.0
+     */
     public void addPatron(Patron patron)
     {
         patrons.add(patron);
     }
 
+     /**
+     * Changes the toString to print out the patrons.
+     *
+     * @since              1.0
+     */
     public void patronMenu()
     {
         checker = 1;
     }
-
+    /**
+     * Changes the toString to print out the publications.
+     *
+     * @since              1.0
+     */
     public void undopatronMenu()
     {
         checker = 0;
     }
 
+
+    /**
+     * Updates the loanedTo field of a publication.
+     *
+     * @param publicationIndex            the index of the publication being checked out
+     * @param patron_index            the index of the patron checking out a publication
+     * @since              1.0
+     */
     public void checkOut(int publicationIndex, int patron_index)
     {
        publications.get(publicationIndex).checkOut(patrons.get(patron_index));
     }
 
-
+    /**
+     * Returns the library's name with a list of either publications or patrons.
+     *
+     * @return             The library's name with a list of either publications or patrons.
+     * @since              1.0
+     */
     @Override
     public String toString()
     {

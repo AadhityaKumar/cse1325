@@ -3,7 +3,7 @@ import library.Library;
 import library.Publication;
 import library.Video;
 import library.Patron;
-import library.Rot13Exception;
+import library.InvalidRuntimeException;
 
 import java.util.Scanner;
 
@@ -17,14 +17,17 @@ public class LibraryManager {
     Publication uno = new Publication("IT", "Stephen King", 1986, null, null);
     Publication dos = new Publication("Harry Potter and the Philosopher's Stone", "JK Rowling", 1997, null, null);
     Publication tres = new Publication("Diary of a Wimpy Kid", "Jeff Kinny", 2007, null, null);
-    Video quatro = new Video("Bamboo", "ME", 2009, null, null, 45);
+    Video quatro = new Video("Saw", "Lionsgate Films", 2004, null, null, 100);
+    Video cinco = new Video("Kung Fu Panda", "Dreamworks", 2008, null, null, 91);
+    Video seis = new Video("Thomas and the Magic Railroad", "Warner Bros.", 2000, null, null, 89);
 
 
     example.addPublication(uno);
     example.addPublication(dos);
     example.addPublication(tres);
     example.addPublication(quatro);
-    example.addPublication(new Video("hellow", "ME", 2009, null, null, 50));
+    example.addPublication(cinco);
+    example.addPublication(seis);
 
     Patron one = new Patron("Aadhitya Kumar (axk8897@mavs.uta.edu)");
     Patron two = new Patron("John Smith (john.smith@uta.edu)");
@@ -51,7 +54,7 @@ public class LibraryManager {
         example.undopatronMenu();
         int patron_name = myInput.nextInt();
 
-        if(checkout < 0 || checkout > 4) 
+        if(checkout < 0 || checkout > 5) 
             throw new IllegalArgumentException("Invalid book number.");   
 
         example.checkOut(checkout, patron_name);
