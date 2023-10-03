@@ -48,7 +48,7 @@ try{
         example.undopatronMenu();
 
         System.out.println("=========\n" + "Main Menu\n" + "=========");
-        System.out.println("0) Exit\n" + "1) List\n" + "2) Add\n" + "3) Check out\n" + "4) Check in\n");
+        System.out.println("0) Exit\n" + "1) List Publications\n" + "2) Add Publication \n" + "3) Check out\n" + "4) Check in\n" + "5) List Patrons\n" + "6) Add Patron\n");
         int selection_menu = myInput.nextInt();
 
         switch(selection_menu)
@@ -119,6 +119,18 @@ try{
                 
                 System.out.println("\n" + example);
                 //System.out.println(example); 
+                break;
+            case 5:
+                example.patronMenu(1);
+                System.out.println(example);
+                example.undopatronMenu();
+                break;
+            case 6: 
+                System.out.println("What is the name of the new Patron?");
+                myInput.nextLine();
+                String name_of_patron = myInput.nextLine();
+                Patron omega = new Patron(name_of_patron);
+                example.addPatron(omega);
                 break;
             default: 
                 System.out.println("Enter a valid number."); 
