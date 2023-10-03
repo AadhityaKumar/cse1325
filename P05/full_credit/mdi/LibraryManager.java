@@ -70,8 +70,21 @@ try{
                 System.out.println("Enter the publication's copyright year.");
                 int cpyright = myInput.nextInt();
                 myInput.nextLine();
-                Publication ultra = new Publication(title, author, cpyright, null, null); 
-                example.addPublication(ultra);
+                System.out.println("Is this publication a video?\n1) Yes\n2) No\n");
+                int video_or_not = myInput.nextInt();
+                if(video_or_not == 1)
+                {
+                    System.out.println("Enter the publication's runtime.");
+                    int run = myInput.nextInt();
+                    Video mega = new Video(title, author, cpyright, null, null, run); 
+                    example.addPublication(mega);
+                }
+                else
+                {
+                    Publication ultra = new Publication(title, author, cpyright, null, null); 
+                    example.addPublication(ultra);
+                }
+                
                 publication_num++;
                 break;
             case 3: 
