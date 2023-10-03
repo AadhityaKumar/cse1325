@@ -39,7 +39,7 @@ public class LibraryManager {
     example.addPatron(three);
 
 
-    //System.out.println(example);
+    
 try{
     while(1<10)
     {
@@ -63,15 +63,17 @@ try{
                 System.out.println("Enter the publication's title.");
                 myInput.nextLine();
                 String title = myInput.nextLine(); 
-                //myInput.nextLine();
+                
                 System.out.println("Enter the publication's author.");
                 String author = myInput.nextLine();
-                //myInput.nextLine();
+                
                 System.out.println("Enter the publication's copyright year.");
                 int cpyright = myInput.nextInt();
                 myInput.nextLine();
+
                 System.out.println("Is this publication a video?\n1) Yes\n2) No\n");
                 int video_or_not = myInput.nextInt();
+                
                 if(video_or_not == 1)
                 {
                     System.out.println("Enter the publication's runtime.");
@@ -89,8 +91,10 @@ try{
                 break;
             case 3: 
                 System.out.println(example); 
+
                 System.out.println("\nWhich book would you like to check out today?");
                 int checkout = myInput.nextInt();
+
                 System.out.println("What is the name of the Patron?");
 
                 if(checkout < 0 || checkout > publication_num) 
@@ -109,6 +113,7 @@ try{
                 break;
             case 4: 
                 System.out.println(example); 
+
                 System.out.println("\nWhich book would you like to check in today?");
                 int checkin = myInput.nextInt();
 
@@ -118,7 +123,7 @@ try{
                 example.checkIn(checkin);
                 
                 System.out.println("\n" + example);
-                //System.out.println(example); 
+                 
                 break;
             case 5:
                 example.patronMenu(1);
@@ -129,8 +134,10 @@ try{
                 System.out.println("What is the name of the new Patron?");
                 myInput.nextLine();
                 String name_of_patron = myInput.nextLine();
+
                 Patron omega = new Patron(name_of_patron);
                 example.addPatron(omega);
+
                 break;
             default: 
                 System.out.println("Enter a valid number."); 
@@ -148,33 +155,7 @@ catch(Exception e)
     }
     
 
-/* 
-    try{
-        System.out.println("\nWhich book would you like to check out today?");
-        int checkout = myInput.nextInt();
-        System.out.println("What is the name of the Patron?");
 
-        myInput.nextLine();
-        example.patronMenu();
-        System.out.println(example);
-        example.undopatronMenu();
-        int patron_name = myInput.nextInt();
-
-        if(checkout < 0 || checkout > 5) 
-            throw new IllegalArgumentException("Invalid book number.");   
-
-        example.checkOut(checkout, patron_name);
-        
-        System.out.println("\n");
-        System.out.println(example);
-
-
- }
-    catch(Exception e)
-    {
-        System.err.println(e.getMessage());
-        System.exit(-1);
-    }*/
     
 
 
