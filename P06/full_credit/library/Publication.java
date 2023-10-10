@@ -37,8 +37,19 @@ public class Publication {
         this.title  =                     br.readLine();
         this.author =                     br.readLine();
         this.copyright = Integer.parseInt(br.readLine());
-        //this.loanedTo  =                  new Patron(br);
-        //this.dueDate = LocalDate.parse(br.readLine());
+
+        String cheky = br.readLine();
+        if(cheky.equals("Checked in"))
+        {
+            loanedTo = null;
+            dueDate = null;
+        }
+        else
+        {
+            
+            this.loanedTo  =            new Patron(cheky);
+            this.dueDate = LocalDate.parse(br.readLine());
+        }
     }
 
     /**
@@ -58,8 +69,15 @@ public class Publication {
         bw.write(title       + '\n');
         bw.write("" + author    + '\n');
         bw.write("" + copyright  + '\n');
-        //bw.write("" + loanedTo + '\n');
-        //bw.write("" +  dueDate + '\n');
+        if(loanedTo == null)
+        {
+            bw.write("" + "Checked in" + '\n');
+        }
+        else
+        {
+            bw.write("" + loanedTo + '\n');
+            bw.write("" +  dueDate + '\n');
+        }
     }
 
     public void checkIn()

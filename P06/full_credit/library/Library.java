@@ -30,22 +30,23 @@ public class Library {
     public Library(String name, int ind, int checker)
     {
         this.name = name;
-        //this.results = results;
         this.ind = ind;
         this.checker = checker;
     }
 
     public Library(BufferedReader br) throws IOException {
         
-        int size = Integer.parseInt(br.readLine()); // Length of array
+        int size = Integer.parseInt(br.readLine());
+        int patron_size = Integer.parseInt(br.readLine());
         
         name = br.readLine();
-        //results = br.readLine();
+        
         ind = Integer.parseInt(br.readLine());
         checker = Integer.parseInt(br.readLine());
 
-        //publications = new Publication[size];                 // Instance the array
-        for(int i=0; i<size; ++i) publications.add(new Publication(br));
+        for(int i=0; i<=size; ++i) publications.add(new Publication(br));
+        for(int i=0; i<=patron_size; ++i) patrons.add(new Patron(br));
+
     }
 
 
@@ -73,15 +74,13 @@ public class Library {
     }
 
     public void save(BufferedWriter bw) throws IOException {
-        bw.write("" + name + '\n');      // Length of array
-        //bw.write("" + results + '\n'); 
+        bw.write("" + name + '\n');
         bw.write("" + ind + '\n'); 
         bw.write("" + checker + '\n'); 
 
-        for(Publication s : publications) s.save(bw);        // Save the elements
+        for(Publication s : publications) s.save(bw);
         
-        bw.write("" + "Patrons" + '\n');         // Size of ArrayList
-        for(Patron q : patrons) bw.write("" + q + '\n'); // Save the elements
+        for(Patron q : patrons) bw.write("" + q + '\n');
     }
 
 
@@ -147,7 +146,6 @@ public class Library {
         }
        else
        {
-            //return "Patrons: \n\n" + patrons;
             StringBuilder sb = new StringBuilder(name + "\n\n");
             for(int i=0; i<patrons.size(); ++i)
                 sb.append("" + i + ") " + patrons.get(i).toString() + "\n");

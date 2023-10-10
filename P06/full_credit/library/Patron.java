@@ -26,10 +26,6 @@ public class Patron {
     public Patron(BufferedReader br) throws IOException {
         this.patron_name  =               br.readLine();
     }
-/* 
-    public void save(BufferedWriter bw) throws IOException {
-        bw.write(patron_name       + '\n');
-    }*/
 
     /**
      * Returns the Cartesian or polar form of the Complex number,

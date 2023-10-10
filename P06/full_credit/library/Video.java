@@ -7,6 +7,8 @@ import java.time.LocalDate;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.BufferedReader;
 
 /**
  * Simulates a video and inherits from publication.
@@ -30,7 +32,26 @@ public class Video extends Publication {
             throw new InvalidRuntimeException("Invalid book number.");
         } 
     }
+/* 
+    public Video(BufferedReader br) throws IOException {
+        this.title  =                     br.readLine();
+        this.author =                     br.readLine();
+        this.copyright = Integer.parseInt(br.readLine());
+        //this.loanedTo  =                  new Patron(br);
+        //this.dueDate = LocalDate.parse(br.readLine());
+        this.runtime = Integer.parseInt(br.readLine());
+    }
 
+    @Override
+    public void save(BufferedWriter bw) throws IOException {
+        bw.write(title       + '\n');
+        bw.write("" + author    + '\n');
+        bw.write("" + copyright  + '\n');
+        //bw.write("" + loanedTo + '\n');
+        //bw.write("" +  dueDate + '\n');
+        bw.write("" + runtime  + '\n');
+
+    }*/
 
 
     /**

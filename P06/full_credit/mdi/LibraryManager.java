@@ -43,6 +43,7 @@ public class LibraryManager {
     example.addPatron(one);
     example.addPatron(two);
     example.addPatron(three);
+    int patron_num = 2;
 
 
     
@@ -55,7 +56,7 @@ try{
 
         System.out.println("=========\n" + "Main Menu\n" + "=========");
         System.out.println("0) Exit\n" + "1) List Publications\n" + "2) Add Publication \n" + "3) Check out\n" + "4) Check in\n" + "5) List Patrons\n" + "6) Add Patron\n" 
-        + "7) Save\n");
+        + "7) Save\n" + "8) Open\n");
         int selection_menu = myInput.nextInt();
 
         switch(selection_menu)
@@ -144,6 +145,7 @@ try{
 
                 Patron omega = new Patron(name_of_patron);
                 example.addPatron(omega);
+                patron_num++;
 
                 break;
             case 7: 
@@ -154,6 +156,7 @@ try{
                 try(BufferedWriter lib = new BufferedWriter(new FileWriter(filename)))
                 {
                     lib.write("" + publication_num + '\n');
+                    lib.write("" + patron_num + '\n');
                     example.save(lib);
                 }
                 catch (Exception e) 
