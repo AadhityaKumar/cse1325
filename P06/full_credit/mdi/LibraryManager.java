@@ -159,6 +159,9 @@ try{
                 {
                     lib.write("" + publication_num + '\n');
                     lib.write("" + patron_num + '\n');
+                    lib.write("" + publication_num + '\n');
+                    lib.write("" + patron_num + '\n');
+                    
                     example.save(lib);
                 }
                 catch (Exception e) 
@@ -176,6 +179,8 @@ try{
                 String fileName = myInput.nextLine();
 
                 try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+                    publication_num = Integer.parseInt(br.readLine());
+                    patron_num = Integer.parseInt(br.readLine());
                     example = new Library(br);
                 } catch (Exception e) {
                     System.err.println("Failed to read: " + e);
