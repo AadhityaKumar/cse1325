@@ -1,0 +1,26 @@
+5
+Caljeet World Library
+0
+0
+IT
+Stephen King
+1986
+Harry Potter and the Philosopher's Stone
+JK Rowling
+1997
+Diary of a Wimpy Kid
+Jeff Kinny
+2007
+Saw
+Lionsgate Films
+2004
+Kung Fu Panda
+Dreamworks
+2008
+Thomas and the Magic Railroad
+Warner Bros.
+2000
+Patrons
+Aadhitya Kumar (axk8897@mavs.uta.edu)
+John Smith (john.smith@uta.edu)
+George Rice (george.rice@uta.edu)

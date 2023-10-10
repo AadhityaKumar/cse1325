@@ -1,5 +1,12 @@
 package library;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.BufferedWriter;
+
+import java.io.FileReader;
+import java.io.BufferedReader;
+
 /**
  * Simulates a patron.
  *
@@ -15,6 +22,14 @@ public class Patron {
     {
         this.patron_name = patron_name;
     }
+
+    public Patron(BufferedReader br) throws IOException {
+        this.patron_name  =               br.readLine();
+    }
+/* 
+    public void save(BufferedWriter bw) throws IOException {
+        bw.write(patron_name       + '\n');
+    }*/
 
     /**
      * Returns the Cartesian or polar form of the Complex number,

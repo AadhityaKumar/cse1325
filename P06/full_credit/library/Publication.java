@@ -3,6 +3,13 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.BufferedWriter;
+
+import java.io.FileReader;
+import java.io.BufferedReader;
+
 
 /**
  * Simulates a publication.
@@ -26,6 +33,14 @@ public class Publication {
         if(copyright < 1900 || copyright > 2023) throw new IllegalArgumentException("Invalid copyright year.");
     }
 
+    public Publication(BufferedReader br) throws IOException {
+        this.title  =                     br.readLine();
+        this.author =                     br.readLine();
+        this.copyright = Integer.parseInt(br.readLine());
+        //this.loanedTo  =                  new Patron(br);
+        //this.dueDate = LocalDate.parse(br.readLine());
+    }
+
     /**
      * Adds a patron name to loanedTo and adds a due date.
      *
@@ -43,8 +58,8 @@ public class Publication {
         bw.write(title       + '\n');
         bw.write("" + author    + '\n');
         bw.write("" + copyright  + '\n');
-        bw.write("" + loanedTo    + '\n');
-        bw.write("" + dueDate + '\n');
+        //bw.write("" + loanedTo + '\n');
+        //bw.write("" +  dueDate + '\n');
     }
 
     public void checkIn()

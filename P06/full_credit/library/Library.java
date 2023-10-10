@@ -1,5 +1,12 @@
 package library;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.BufferedWriter;
+
+import java.io.FileReader;
+import java.io.BufferedReader;
+
 /**
  * Simulates a library.
  *
@@ -12,7 +19,6 @@ import java.util.ArrayList;
 
 public class Library {
     protected String name;
-    protected String results;
     protected int ind;
     protected int checker;
 
@@ -21,13 +27,27 @@ public class Library {
 
 
 
-    public Library(String name, String results, int ind, int checker)
+    public Library(String name, int ind, int checker)
     {
         this.name = name;
-        this.results = results;
+        //this.results = results;
         this.ind = ind;
         this.checker = checker;
     }
+
+    public Library(BufferedReader br) throws IOException {
+        
+        int size = Integer.parseInt(br.readLine()); // Length of array
+        
+        name = br.readLine();
+        //results = br.readLine();
+        ind = Integer.parseInt(br.readLine());
+        checker = Integer.parseInt(br.readLine());
+
+        //publications = new Publication[size];                 // Instance the array
+        for(int i=0; i<size; ++i) publications.add(new Publication(br));
+    }
+
 
     /**
      * Adds a publication to the ArrayList.
@@ -54,10 +74,14 @@ public class Library {
 
     public void save(BufferedWriter bw) throws IOException {
         bw.write("" + name + '\n');      // Length of array
+        //bw.write("" + results + '\n'); 
+        bw.write("" + ind + '\n'); 
+        bw.write("" + checker + '\n'); 
+
         for(Publication s : publications) s.save(bw);        // Save the elements
         
         bw.write("" + "Patrons" + '\n');         // Size of ArrayList
-        for(Patron s : patrons) bw.write("" + i + '\n'); // Save the elements
+        for(Patron q : patrons) bw.write("" + q + '\n'); // Save the elements
     }
 
 

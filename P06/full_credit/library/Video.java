@@ -4,6 +4,10 @@ import java.time.LocalDateTime;
 import java.util.Date;
 import java.time.LocalDate;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.BufferedWriter;
+
 /**
  * Simulates a video and inherits from publication.
  *
@@ -26,6 +30,7 @@ public class Video extends Publication {
             throw new InvalidRuntimeException("Invalid book number.");
         } 
     }
+
 
 
     /**

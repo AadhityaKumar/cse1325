@@ -10,12 +10,15 @@ import java.io.IOException;
 import java.io.BufferedWriter;
 import java.util.Scanner;
 
+import java.io.FileReader;
+import java.io.BufferedReader;
+
 
 public class LibraryManager {
     
     public static void main(String[] args) {
     Scanner myInput = new Scanner(System.in);
-    Library example = new Library("Caljeet World Library", "\n", 0, 0);
+    Library example = new Library("Caljeet World Library", 0, 0);
 
     Publication uno = new Publication("IT", "Stephen King", 1986, null, null);
     Publication dos = new Publication("Harry Potter and the Philosopher's Stone", "JK Rowling", 1997, null, null);
@@ -145,20 +148,37 @@ try{
                 break;
             case 7: 
                 System.out.println("Enter the filename.");
+                myInput.nextLine();
                 String filename = myInput.nextLine();
+                
                 try(BufferedWriter lib = new BufferedWriter(new FileWriter(filename)))
                 {
-                    example.save(lib)
+                    lib.write("" + publication_num + '\n');
+                    example.save(lib);
                 }
-                } catch (Exception e) {
+                catch (Exception e) 
+                {
                     System.err.println("Failed to write: " + e);
                     System.exit(-1);
                 }
 
                 break;
-            /*case 8:
+            case 8:
+                example = null;
+
+                System.out.println("Enter the filename.");
+                myInput.nextLine();
+                String fileName = myInput.nextLine();
+
+                try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+                    example = new Library(br);
+                } catch (Exception e) {
+                    System.err.println("Failed to read: " + e);
+                    System.exit(-2);
+                }
+                System.out.println(example);
                 
-                break;*/
+                break;
             default: 
                 System.out.println("Enter a valid number."); 
                 break;
