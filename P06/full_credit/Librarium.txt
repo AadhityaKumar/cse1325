@@ -1,38 +1,41 @@
-6
+5
 2
 Caljeet World Library
 0
 0
+Publication
 IT
 Stephen King
 1986
-George Rice (george.rice@uta.edu)
-2023-10-23
+Checked in
+Publication
 Harry Potter and the Philosopher's Stone
 JK Rowling
 1997
 Checked in
+Publication
 Diary of a Wimpy Kid
 Jeff Kinny
 2007
 Checked in
+Video
 Saw
 Lionsgate Films
 2004
 Checked in
+100
+Video
 Kung Fu Panda
 Dreamworks
 2008
-John Smith (john.smith@uta.edu)
-2023-10-23
+Checked in
+91
+Video
 Thomas and the Magic Railroad
 Warner Bros.
 2000
 Checked in
-Hello World
-Alex Dillhoff
-2021
-Checked in
+89
 Aadhitya Kumar (axk8897@mavs.uta.edu)
 John Smith (john.smith@uta.edu)
 George Rice (george.rice@uta.edu)

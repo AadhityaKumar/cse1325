@@ -32,13 +32,9 @@ public class Video extends Publication {
             throw new InvalidRuntimeException("Invalid book number.");
         } 
     }
-/* 
+
     public Video(BufferedReader br) throws IOException {
-        this.title  =                     br.readLine();
-        this.author =                     br.readLine();
-        this.copyright = Integer.parseInt(br.readLine());
-        //this.loanedTo  =                  new Patron(br);
-        //this.dueDate = LocalDate.parse(br.readLine());
+        super(br);
         this.runtime = Integer.parseInt(br.readLine());
     }
 
@@ -47,11 +43,19 @@ public class Video extends Publication {
         bw.write(title       + '\n');
         bw.write("" + author    + '\n');
         bw.write("" + copyright  + '\n');
-        //bw.write("" + loanedTo + '\n');
-        //bw.write("" +  dueDate + '\n');
+        if(loanedTo == null)
+        {
+            bw.write("" + "Checked in" + '\n');
+        }
+        else
+        {
+            bw.write("" + loanedTo + '\n');
+            bw.write("" +  dueDate + '\n');
+        }
+    
         bw.write("" + runtime  + '\n');
 
-    }*/
+    }
 
 
     /**

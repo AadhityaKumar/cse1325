@@ -34,7 +34,9 @@ public class LibraryManager {
     example.addPublication(quatro);
     example.addPublication(cinco);
     example.addPublication(seis);
+    
     int publication_num = 5;
+
 
     Patron one = new Patron("Aadhitya Kumar (axk8897@mavs.uta.edu)");
     Patron two = new Patron("John Smith (john.smith@uta.edu)");

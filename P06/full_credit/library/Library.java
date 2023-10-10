@@ -44,7 +44,18 @@ public class Library {
         ind = Integer.parseInt(br.readLine());
         checker = Integer.parseInt(br.readLine());
 
-        for(int i=0; i<=size; ++i) publications.add(new Publication(br));
+        for(int i=0; i<=size; ++i) 
+        {
+            String publication_or_not = br.readLine();
+            if(publication_or_not.equals("Publication"))
+            {
+                publications.add(new Publication(br));
+            }
+            else
+            {
+                publications.add(new Video(br));
+            }
+        }
         for(int i=0; i<=patron_size; ++i) patrons.add(new Patron(br));
 
     }
@@ -78,7 +89,20 @@ public class Library {
         bw.write("" + ind + '\n'); 
         bw.write("" + checker + '\n'); 
 
-        for(Publication s : publications) s.save(bw);
+        for(Publication s : publications)
+        {
+            if(s instanceof Video)
+            {
+                bw.write("" + "Video" + '\n');
+            }
+            else
+            {
+                bw.write("" + "Publication" + '\n');
+            }
+            s.save(bw);
+        }
+            
+            
         
         for(Patron q : patrons) bw.write("" + q + '\n');
     }
