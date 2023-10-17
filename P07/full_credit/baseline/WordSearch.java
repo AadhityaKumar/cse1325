@@ -3,10 +3,12 @@ import java.util.Collections;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.LinkedList;
-
+import java.util.Map;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class WordSearch {
     private static final String usage = "usage: java WordSearch [-h] [-v] [#threads] [#puzzles] [puzzleFile]...";
@@ -68,7 +70,7 @@ public class WordSearch {
         NUM_PUZZLES = puzzles.size();
         
         // -------- All Puzzles Loaded --------
-
+        solutions = Collections.synchronizedList(new CopyOnWriteArrayList<>());
         
     }
     
@@ -143,22 +145,7 @@ public class WordSearch {
     
         WordSearch ws = new WordSearch(new LinkedList<>(Arrays.asList(args)));
 
-        /* 
-        int ultra, omega;
-
-        Thread[] threads = new Thread[NUM_THREADS];
-        for (int i=0; i<NUM_THREADS; ++i) 
-        {
-            ultra = i * (NUM_PUZZLES/NUM_THREADS);
-            omega = (i+1) * (NUM_PUZZLES/NUM_THREADS);
-            
-            threads[i] = new Thread(() -> solve(i, ultra, omega));
-            threads[i].start();
-        }
-        for(int i=0; i<NUM_THREADS; ++i) 
-        {
-            threads[i].join();
-        }*/
+        
 
 
         ws.solve();
