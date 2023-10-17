@@ -3,7 +3,8 @@ FULL CREDIT
 
 QUESTION 1: Why is String[] args changed to a LinkedList in WordSearch.main? (Hint: Examine the WordSearch constructor!)
 
-
+This is because in the constructor of WordSearch, the elements of args are removed after being added to each field. Removing elements is much
+easier with a LinkedList than an array.
 
 
 QUESTION 2: How many puzzles did your machine need to solve with 1 thread to run for between 30 and 45 seconds: 
