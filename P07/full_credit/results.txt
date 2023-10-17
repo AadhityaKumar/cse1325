@@ -43,23 +43,310 @@ sys	0m0.229s
 
 YOUR Timing:
 
+$ time java WordSearch 1 1200 ../puzzle03.txt
+
+1200 puzzles with 1 threads
+Thread 0: 0-1199
+
+real    0m41.435s
+user    0m0.000s
+sys     0m0.000s
 
 
 
+$ time java WordSearch 2 1200 ../puzzle03.txt
+
+1200 puzzles with 2 threads
+Thread 0: 0-599
+Thread 1: 600-1199
+
+real    0m26.448s
+user    0m0.015s
+sys     0m0.015s
 
 
+
+$ time java WordSearch 3 1200 ../puzzle03.txt
+
+1200 puzzles with 3 threads
+Thread 0: 0-399
+Thread 2: 800-1199
+Thread 1: 400-799
+
+real    0m20.759s
+user    0m0.000s
+sys     0m0.000s
+
+
+
+$ time java WordSearch 4 1200 ../puzzle03.txt
+
+1200 puzzles with 4 threads
+Thread 3: 900-1199
+Thread 0: 0-299
+Thread 1: 300-599
+Thread 2: 600-899
+
+real    0m18.116s
+user    0m0.000s
+sys     0m0.016s
+
+
+
+1200 puzzles with 5 threads
+Thread 0: 0-239
+Thread 1: 240-479
+Thread 3: 720-959
+Thread 2: 480-719
+Thread 4: 960-1199
+
+real    0m16.928s
+user    0m0.000s
+sys     0m0.031s
+
+
+
+$ time java WordSearch 6 1200 ../puzzle03.txt
+
+1200 puzzles with 6 threads
+Thread 4: 800-999
+Thread 2: 400-599
+Thread 5: 1000-1199
+Thread 3: 600-799
+Thread 1: 200-399
+Thread 0: 0-199
+
+real    0m15.777s
+user    0m0.000s
+sys     0m0.000s
+
+
+
+$ time java WordSearch 7 1200 ../puzzle03.txt
+
+1200 puzzles with 7 threads
+Thread 4: 684-854
+Thread 0: 0-170
+Thread 3: 513-683
+Thread 5: 855-1025
+Thread 2: 342-512
+Thread 6: 1026-1196
+Thread 1: 171-341
+
+real    0m18.603s
+user    0m0.000s
+sys     0m0.031s
+
+
+
+$ time java WordSearch 8 1200 ../puzzle03.txt
+
+1200 puzzles with 8 threads
+Thread 3: 450-599
+Thread 6: 900-1049
+Thread 4: 600-749
+Thread 1: 150-299
+Thread 7: 1050-1199
+Thread 5: 750-899
+Thread 2: 300-449
+Thread 0: 0-149
+
+real    0m17.266s
+user    0m0.000s
+sys     0m0.015s
+
+
+
+$ time java WordSearch 9 1200 ../puzzle03.txt
+
+1200 puzzles with 9 threads
+Thread 7: 931-1063
+Thread 2: 266-398
+Thread 3: 399-531
+Thread 6: 798-930
+Thread 8: 1064-1196
+Thread 5: 665-797
+Thread 4: 532-664
+Thread 1: 133-265
+Thread 0: 0-132
+
+real    0m16.948s
+user    0m0.000s
+sys     0m0.000s
+
+
+
+$ time java WordSearch 10 1200 ../puzzle03.txt
+
+1200 puzzles with 10 threads
+Thread 6: 720-839
+Thread 7: 840-959
+Thread 4: 480-599
+Thread 9: 1080-1199
+Thread 1: 120-239
+Thread 2: 240-359
+Thread 3: 360-479
+Thread 0: 0-119
+Thread 5: 600-719
+Thread 8: 960-1079
+
+real    0m14.941s
+user    0m0.015s
+sys     0m0.000s
+
+
+
+$ time java WordSearch 11 1200 ../puzzle03.txt
+
+1200 puzzles with 11 threads
+Thread 9: 981-1089
+Thread 4: 436-544
+Thread 8: 872-980
+Thread 1: 109-217
+Thread 0: 0-108
+Thread 10: 1090-1198
+Thread 3: 327-435
+Thread 5: 545-653
+Thread 2: 218-326
+Thread 7: 763-871
+Thread 6: 654-762
+
+real    0m15.201s
+user    0m0.000s
+sys     0m0.015s
+
+
+
+$ time java WordSearch 12 1200 ../puzzle03.txt
+
+1200 puzzles with 12 threads
+Thread 11: 1100-1199
+Thread 5: 500-599
+Thread 3: 300-399
+Thread 0: 0-99
+Thread 2: 200-299
+Thread 8: 800-899
+Thread 1: 100-199
+Thread 6: 600-699
+Thread 9: 900-999
+Thread 4: 400-499
+Thread 10: 1000-1099
+Thread 7: 700-799
+
+real    0m14.590s
+user    0m0.000s
+sys     0m0.015s
+
+
+
+$ time java WordSearch 13 1200 ../puzzle03.txt
+
+1200 puzzles with 13 threads
+Thread 1: 92-183
+Thread 11: 1012-1103
+Thread 8: 736-827
+Thread 3: 276-367
+Thread 10: 920-1011
+Thread 2: 184-275
+Thread 6: 552-643
+Thread 0: 0-91
+Thread 12: 1104-1195
+Thread 4: 368-459
+Thread 5: 460-551
+Thread 7: 644-735
+Thread 9: 828-919
+
+real    0m13.957s
+user    0m0.000s
+sys     0m0.000s
+
+
+
+$ time java WordSearch 14 1200 ../puzzle03.txt
+
+1200 puzzles with 14 threads
+Thread 7: 595-679
+Thread 10: 850-934
+Thread 0: 0-84
+Thread 5: 425-509
+Thread 6: 510-594
+Thread 1: 85-169
+Thread 3: 255-339
+Thread 13: 1105-1189
+Thread 12: 1020-1104
+Thread 8: 680-764
+Thread 2: 170-254
+Thread 11: 935-1019
+Thread 4: 340-424
+Thread 9: 765-849
+
+real    0m14.775s
+user    0m0.000s
+sys     0m0.000s
+
+
+
+$ time java WordSearch 15 1200 ../puzzle03.txt
+
+1200 puzzles with 15 threads
+Thread 13: 1040-1119
+Thread 0: 0-79
+Thread 6: 480-559
+Thread 7: 560-639
+Thread 9: 720-799
+Thread 5: 400-479
+Thread 4: 320-399
+Thread 11: 880-959
+Thread 10: 800-879
+Thread 14: 1120-1199
+Thread 3: 240-319
+Thread 1: 80-159
+Thread 2: 160-239
+Thread 12: 960-1039
+Thread 8: 640-719
+
+real    0m13.379s
+user    0m0.000s
+sys     0m0.015s
+
+
+
+$ time java WordSearch 16 1200 ../puzzle03.txt
+
+1200 puzzles with 16 threads
+Thread 15: 1125-1199
+Thread 3: 225-299
+Thread 7: 525-599
+Thread 12: 900-974
+Thread 5: 375-449
+Thread 1: 75-149
+Thread 10: 750-824
+Thread 4: 300-374
+Thread 9: 675-749
+Thread 6: 450-524
+Thread 8: 600-674
+Thread 11: 825-899
+Thread 0: 0-74
+Thread 2: 150-224
+Thread 14: 1050-1124
+Thread 13: 975-1049
+
+real    0m17.088s
+user    0m0.000s
+sys     0m0.031s
 
 QUESTION 3: Does adding more threads continue to speed up the program? Do more threads ever slow down the program even slightly?  Why or why not?
 
 
-
+Adding more threads speads up the program, as the proccesses are divided and performed simultaniously rather than 1 at a time. However, it seemed to have 
+stopped decreasing the speed at around 13-17 seconds. This is likely due to the amount of cores on my machine.
 
 
 
 QUESTION 4: Does adding more threads increase the "system load" (sys), or is it constant regardless of the number of threads?  Why?
 
 
-
+It seems to slow it increase system load slightly, as the system is using more memory to run the program.
 
 
 
