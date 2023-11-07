@@ -3,11 +3,13 @@
 
 #include <iostream>
 #include "Shape.h"
+#define _USE_MATH_DEFINES
+#include <cmath>
 
 class Circle : public Shape {
     public:
         Circle();
-        Circle(double radius); //: Shape() {}
+        Circle(double radius);
         std::string name() override;
         double area() override;
     private:

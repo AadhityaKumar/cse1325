@@ -4,13 +4,13 @@
 #include "Circle.h"
 
 
-    Circle::Circle(double r) : radius(r) {}
+    Circle::Circle(double radius) : radius{radius} {}
 
     std::string Circle::name() {
         return "Circle";
     }
 
     double Circle::area() {
-        return 3.14 * radius * radius;
+        return M_PI * radius * radius;
     }
 

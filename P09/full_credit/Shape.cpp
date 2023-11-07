@@ -15,5 +15,5 @@ double Shape::area() {
 }
 
 std::string Shape::to_string() {
-    return name() + " " + std::to_string(area());
+    return name() + " with area " + std::to_string(area());
 } 

@@ -4,7 +4,7 @@
 #include "Rectangle.h"
 
 
-    Rectangle::Rectangle(double w, double h) : width(w), height(h) {}
+    Rectangle::Rectangle(double width, double height) : width{width}, height{height} {}
 
     std::string Rectangle::name() {
         return "Rectangle";

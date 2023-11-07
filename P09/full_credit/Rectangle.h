@@ -7,7 +7,7 @@
 class Rectangle : public Shape {
     public:
         Rectangle();
-        Rectangle(double width, double height); //: Shape() {}
+        Rectangle(double width, double height);
         std::string name() override;
         double area() override;
     private:
