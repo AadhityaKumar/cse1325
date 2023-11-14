@@ -18,9 +18,9 @@
     }
 
     std::istream& operator>>(std::istream& is, Time& time) {
-    is >> time.hour;
-    is >> time.minute;
-    is >> time.second; 
+    char colon;
+
+    is >> time.hour >> colon >> time.minute >> colon >> time.second;
     time.Rationalize();
     return is;
 }
