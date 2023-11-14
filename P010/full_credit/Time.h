@@ -1,5 +1,5 @@
-#ifndef TIME_H
-#define TIME_H
+#ifndef __TIME_H
+#define __TIME_H
 
 #include <iostream>
 #define _USE_MATH_DEFINES
