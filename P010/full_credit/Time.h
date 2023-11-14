@@ -24,13 +24,15 @@ class Time{
         Time operator++(int);
         Time operator+(const Time& other) const;
 
-        int compare(const Time& rhs) const;
-        void Rationalize();
-        std::string to_string() const;   
+         
     private:
         int hour;
         int minute;
         int second;
+
+        int compare(const Time& rhs) const;
+        void Rationalize();
+        std::string to_string() const;  
 
 };
 
