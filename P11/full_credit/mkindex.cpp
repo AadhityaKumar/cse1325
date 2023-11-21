@@ -11,8 +11,11 @@ int main(int argc, char* argv[]) {
 
 Index omega;
 
-std::ifstream ist{std::string{"america.txt"}};
-if (!ist) throw std::runtime_error{"can't open input file"};
+for(int j = 1; j < argc; j++) {
+
+std::ifstream ist{std::string{argv[j]}};
+if (!ist)  {continue;} //throw std::runtime_error{"can't open input file"};
+
 std::string s;
 
 int line = 0;
@@ -29,12 +32,17 @@ while (std::getline(ist, s)){
     {
         std::smatch match = *i;
         std::string word = match.str();
-        omega.add_word(word,"america.txt",line);
+        std::string fl = argv[j];
+
+        omega.add_word(word,fl,line);
 
     }
 
 
     }
+
+}
+    
 
     std::cout << omega;
     return 0;

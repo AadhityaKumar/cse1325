@@ -11,7 +11,7 @@
     Location::Location(std::string filename, int line) : filename{filename}, line{line} {}
 
     std::ostream& operator<<(std::ostream& os, const Location& location) {
-    os << location.filename << "line" <<location.line;
+    os << location.filename << " line " <<location.line;
     return os;
     }
 
