@@ -24,6 +24,11 @@ while (std::getline(ist, s)){
     
     line++;
 
+    for(int k = 0; k < s.length(); k++)
+    {
+        s[k] = tolower(s[k]);
+    }
+
     std::regex words_regex("\\b\\w+\\b");
     auto words_begin = std::sregex_iterator(s.begin(), s.end(), words_regex);
     auto words_end = std::sregex_iterator();
