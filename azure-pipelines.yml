@@ -52,8 +52,8 @@ stages:
             - task: CopyFiles@2
               displayName: 'Copy .class Files copy'
               inputs:
-                SourceFolder: '$(Build.ArtifactStagingDirectory)'
+                SourceFolder: 'C:\AzureDevops\DeploymentTest'
                 Contents: |
                   **/*.class
-                TargetFolder: 'C:\AzureDevops\DeploymentTest'
+                TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
