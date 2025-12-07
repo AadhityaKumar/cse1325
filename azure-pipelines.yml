@@ -16,4 +16,7 @@ steps:
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
+    javac Hello.java
+    java Hello
   displayName: 'Run a multi-line script'
+  workingDirectory: '$(System.DefaultWorkingDirectory)/P01/full_credit'
