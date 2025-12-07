@@ -23,7 +23,7 @@ steps:
 
 - task: CopyFiles@2
   inputs:
-    sourceFolder: '$(workingDirectory)'
+    sourceFolder: '$(System.DefaultWorkingDirectory)/P01/full_credit'
     contents: '**/$(BuildConfiguration)/**/?(*.exe|*.class|*.pdb)'
     targetFolder: '$(Build.ArtifactStagingDirectory)'
 - task: PublishBuildArtifacts@1
