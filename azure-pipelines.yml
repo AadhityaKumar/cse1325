@@ -6,28 +6,53 @@
 trigger:
 - main
 
-pool:
-  vmImage: ubuntu-latest
+stages:
+  - stage: build
+    jobs:
+    - job: run_build
+      pool:
+        vmImage: ubuntu-latest
+      steps:
+      - script: echo Hello, world!
+        displayName: 'Run a one-line script'
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+      - script: |
+          echo Add other tasks to build, test, and deploy your project.
+          echo See https://aka.ms/yaml
+          javac Hello.java
+          java Hello
+        displayName: 'Run a multi-line script'
+        workingDirectory: '$(System.DefaultWorkingDirectory)/P01/full_credit'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-    javac Hello.java
-    java Hello
-  displayName: 'Run a multi-line script'
-  workingDirectory: '$(System.DefaultWorkingDirectory)/P01/full_credit'
+      - task: CopyFiles@2
+        inputs:
+          sourceFolder: '$(System.DefaultWorkingDirectory)/P01/full_credit'
+          contents: |      
+            **/*.class
+          targetFolder: '$(Build.ArtifactStagingDirectory)'
+      - task: PublishBuildArtifacts@1
+        inputs:
+          pathToPublish: '$(Build.ArtifactStagingDirectory)'
+          artifactName: drop
 
-- task: CopyFiles@2
-  inputs:
-    sourceFolder: '$(System.DefaultWorkingDirectory)/P01/full_credit'
-    contents: |      
-     **/*.class
-    targetFolder: '$(Build.ArtifactStagingDirectory)'
-- task: PublishBuildArtifacts@1
-  inputs:
-    pathToPublish: '$(Build.ArtifactStagingDirectory)'
-    artifactName: drop
+  - stage: deploy
+    jobs:
+    - deployment: DeployTest
+      displayName: 'Deploy to Development Environment
+      pool:
+        vmImage: ubuntu-latest'
+      environment:
+        name: 'Aadhitya_Deployment_Server'
+        resourceName: LAPTOP-I73C2NHS
+        resourceType: virtualMachine
+      strategy:
+        runOnce:
+          deploy:
+            steps:
+            - task: CopyFiles@2
+              displayName: 'Copy .class Files copy'
+              inputs:
+                SourceFolder: '$(Build.ArtifactStagingDirectory)'
+                Contents: '**/*.class'
+                TargetFolder: 'C:\AzureDevops\DeploymentTest'
+
