@@ -20,3 +20,13 @@ steps:
     java Hello
   displayName: 'Run a multi-line script'
   workingDirectory: '$(System.DefaultWorkingDirectory)/P01/full_credit'
+
+- task: CopyFiles@2
+  inputs:
+    sourceFolder: '$(Build.workingDirectory)'
+    contents: '**/$(BuildConfiguration)/**/?(*.exe|*.class|*.pdb)'
+    targetFolder: '$(Build.ArtifactStagingDirectory)'
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathToPublish: '$(Build.ArtifactStagingDirectory)'
+    artifactName: drop
