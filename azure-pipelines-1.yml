@@ -57,5 +57,5 @@ stages:
               inputs:
                 buildType: 'current'
                 artifactName: drop
-                targetPath: 'C:\AzureDevops\DeploymentTest'
+                targetPath: 'C:\AzureDevops\DeploymentTest\cpp'
                 patterns: '**/*.*'
