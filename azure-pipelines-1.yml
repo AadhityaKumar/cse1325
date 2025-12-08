@@ -22,7 +22,8 @@ stages:
           echo Add other tasks to build, test, and deploy your project.
           echo See https://aka.ms/yaml
           make
-          ./a.out
+          EXEC=$(find . -maxdepth 2 -type f -perm -111 | head -n 1)
+          $EXEC
         displayName: 'Run a multi-line script'
         workingDirectory: '$(System.DefaultWorkingDirectory)/P09/full_credit'
 
