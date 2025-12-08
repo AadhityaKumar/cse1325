@@ -51,7 +51,8 @@ stages:
         runOnce:
           deploy:
             steps:
-            - download: none
+            - download: current
+              artifact: drop
 
             - task: CopyFiles@2
               inputs:
@@ -59,3 +60,4 @@ stages:
                 contents: |      
                   **/*.*
                 targetFolder: 'C:\AzureDevops\DeploymentTest'
+                CleanTargetFolder: true
