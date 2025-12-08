@@ -3,17 +3,58 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
+
 trigger:
 - main
 
-pool:
-  vmImage: ubuntu-latest
+stages:
+  - stage: build
+    jobs:
+    - job: run_build
+      pool:
+        vmImage: ubuntu-latest
+      steps:
+      - script: echo Hello, world!
+        displayName: 'Run a one-line script'
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+      - script: |
+          echo Add other tasks to build, test, and deploy your project.
+          echo See https://aka.ms/yaml
+          make
+          ./Shapes
+        displayName: 'Run a multi-line script'
+        workingDirectory: '$(System.DefaultWorkingDirectory)/P09/full_credit'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+      - task: CopyFiles@2
+        inputs:
+          sourceFolder: '$(System.DefaultWorkingDirectory)/P09/full_credit'
+          contents: |      
+            **/*.o
+          targetFolder: '$(Build.ArtifactStagingDirectory)'
+      - task: PublishBuildArtifacts@1
+        inputs:
+          pathToPublish: '$(Build.ArtifactStagingDirectory)'
+          artifactName: drop
+
+  - stage: deploy
+    jobs:
+    - deployment: DeployTest
+      displayName: 'Deploy to Development Environment
+      pool:
+        vmImage: ubuntu-latest'
+      environment:
+        name: 'Aadhitya_Deployment_Server'
+        #resourceName: LAPTOP-I73C2NHS
+        resourceType: virtualMachine
+      strategy:
+        runOnce:
+          deploy:
+            steps:
+            - download: none
+
+            - task: CopyFiles@2
+              inputs:
+                sourceFolder: '$(Build.ArtifactStagingDirectory)\drop'
+                contents: |      
+                  **/*.o
+                targetFolder: 'C:\AzureDevops\DeploymentTest'
