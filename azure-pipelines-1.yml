@@ -18,18 +18,18 @@ stages:
       - script: echo Hello, world!
         displayName: 'Run a one-line script'
 
-      - script: |
-          echo Add other tasks to build, test, and deploy your project.
-          echo See https://aka.ms/yaml
-        displayName: 'Run a multi-line script'
-
       - task: CMake@1
         inputs:
           cmakeArgs: 
             make
-            ./Shapes
           workingDirectory: '$(System.DefaultWorkingDirectory)/P09/full_credit'
 
+      - script: |
+          echo Add other tasks to build, test, and deploy your project.
+          echo See https://aka.ms/yaml
+          ./Shapes
+        displayName: 'Run a multi-line script'
+        workingDirectory: '$(System.DefaultWorkingDirectory)/P09/full_credit'
 
       - task: CopyFiles@2
         inputs:
