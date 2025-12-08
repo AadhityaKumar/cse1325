@@ -21,8 +21,8 @@ stages:
       - task: CMake@1
         inputs:
           cmakeArgs: 
-            Makefile
-          workingDirectory: '$(System.DefaultWorkingDirectory)/P09/full_credit'
+            full_credit
+          workingDirectory: '$(System.DefaultWorkingDirectory)/P09'
 
       - script: |
           echo Add other tasks to build, test, and deploy your project.
