@@ -30,7 +30,7 @@ stages:
         inputs:
           sourceFolder: '$(System.DefaultWorkingDirectory)/P09/full_credit'
           contents: |      
-            **/*.o
+            **/*.*
           targetFolder: '$(Build.ArtifactStagingDirectory)'
       - task: PublishBuildArtifacts@1
         inputs:
