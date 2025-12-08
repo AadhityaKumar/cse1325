@@ -43,7 +43,7 @@ stages:
         vmImage: ubuntu-latest'
       environment:
         name: 'Aadhitya_Deployment_Server'
-        resourceName: LAPTOP-I73C2NHS
+        #resourceName: LAPTOP-I73C2NHS
         resourceType: virtualMachine
       strategy:
         runOnce:
