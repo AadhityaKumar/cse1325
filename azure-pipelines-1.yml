@@ -22,7 +22,7 @@ stages:
           echo Add other tasks to build, test, and deploy your project.
           echo See https://aka.ms/yaml
           make
-          ./build/Shapes
+          ./shapes
         displayName: 'Run a multi-line script'
         workingDirectory: '$(System.DefaultWorkingDirectory)/P09/full_credit'
 
