@@ -55,7 +55,7 @@ stages:
 
             - task: CopyFiles@2
               inputs:
-                sourceFolder: 'drop'
+                sourceFolder: '$(Pipeline.Workspace)/drop'
                 contents: |      
-                  **/*.o
+                  **/*.*
                 targetFolder: 'C:\AzureDevops\DeploymentTest'
