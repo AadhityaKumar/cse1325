@@ -21,7 +21,7 @@ stages:
       - task: CMake@1
         inputs:
           cmakeArgs: 
-            make
+            Makefile
           workingDirectory: '$(System.DefaultWorkingDirectory)/P09/full_credit'
 
       - script: |
