@@ -56,4 +56,9 @@ stages:
                 Contents: |
                   **/*.class
                 TargetFolder: 'C:\AzureDevops\DeploymentTest'
-
+            - task: DeleteFiles@1
+              displayName: 'Remove unneeded files'
+              inputs:
+                SourceFolder: 'C:\azagent\A3\_work\1/drop'
+                Contents: |
+                  **/*.class
