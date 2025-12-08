@@ -56,7 +56,7 @@ stages:
 
             - task: CopyFiles@2
               inputs:
-                sourceFolder: '$(Build.ArtifactStagingDirectory)\drop'
+                sourceFolder: '$(Build.ArtifactStagingDirectory)'
                 contents: |      
                   **/*.o
                 targetFolder: 'C:\AzureDevops\DeploymentTest'
