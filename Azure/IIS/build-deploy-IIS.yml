@@ -19,7 +19,9 @@ stages:
       - script: |
           echo Add other tasks to build, test, and deploy your project.
           echo See https://aka.ms/yaml
+          python html_update.py
         displayName: 'Run a multi-line script'
+        workingDirectory: '$(System.DefaultWorkingDirectory)/Azure/IIS'
 
       - task: CopyFiles@2
         inputs:
@@ -81,3 +83,4 @@ stages:
                             }
                         ]
                     }
+
