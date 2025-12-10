@@ -76,7 +76,7 @@ stages:
                             {
                                 "protocol":"http",
                                 "ipAddress":"",
-                                "hostname":"",
+                                "hostname":"mywebsiteazure.local",
                                 "port":"80",
                                 "sslThumbprint":"",
                                 "sniFlag":false
