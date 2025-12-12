@@ -104,7 +104,7 @@ stages:
                 buildType: 'current'
                 artifactName: drop
                 targetPath: 'C:\inetpub\wwwroot\MyWebsiteAzure'
-                patterns: 'anvita.html'
+                patterns: '**/anvita.html'
 
             - task: IISWebAppManagementOnMachineGroup@0
               inputs:
