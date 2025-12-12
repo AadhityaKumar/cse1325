@@ -111,7 +111,7 @@ stages:
                 IISDeploymentType: 'IISWebsite'
                 ActionIISWebsite: 'CreateOrUpdateWebsite'
                 WebsiteName: 'MyWebsiteAzure'
-                WebsitePhysicalPath: 'C:\inetpub\wwwroot\MyWebsiteAzure\anvita.html'
+                WebsitePhysicalPath: 'C:\inetpub\wwwroot\MyWebsiteAzure'
                 WebsitePhysicalPathAuth: 'WebsiteUserPassThrough'
                 CreateOrUpdateAppPoolForWebsite: true
                 AppPoolNameForWebsite: 'MyWebsiteAzure'
