@@ -104,7 +104,7 @@ stages:
                 buildType: 'current'
                 artifactName: drop
                 targetPath: 'C:\inetpub\wwwroot\MyWebsiteAzure'
-                patterns: '**/*.html'
+                patterns: 'anvita.html'
 
             - task: IISWebAppManagementOnMachineGroup@0
               inputs:
@@ -125,7 +125,7 @@ stages:
                             {
                                 "protocol":"http",
                                 "ipAddress":"",
-                                "hostname":"",
+                                "hostname":"mywebsiteazure.local",
                                 "port":"80",
                                 "sslThumbprint":"",
                                 "sniFlag":false
