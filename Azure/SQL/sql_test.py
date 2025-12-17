@@ -1,5 +1,4 @@
 import pyodbc
-import numpy
 
 db = pyodbc.connect(Trusted_Connection = 'yes', driver = '{SQL Server}', server = 'LAPTOP-I73C2NHS\SQLEXPRESS', database = 'aadhitya')
 
@@ -36,4 +35,5 @@ db.close()
 #Database server: LAPTOP-I73C2NHS\SQLEXPRESS (SQL Server 16.0.1000 - LAPTOP-I73C2NHS\axk88)
 #Database: aadhitya
 #Username: LAPTOP-I73C2NHS\axk88
+
 #Connection String: Data Source=LAPTOP-I73C2NHS\SQLEXPRESS;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Application Name="SQL Server Management Studio";Command Timeout=0
