@@ -51,6 +51,7 @@ stages:
                 echo See https://aka.ms/yaml
                 python sql_test.py
               displayName: 'Run a multi-line script'
+              workingDirectory: '$(System.DefaultWorkingDirectory)/Azure/SQL'
 
             - task: SqlDacpacDeploymentOnMachineGroup@0
               inputs:
