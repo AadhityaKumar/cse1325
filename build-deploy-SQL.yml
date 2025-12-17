@@ -16,7 +16,7 @@ steps:
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
-    pip install pyodbc
-    python sql_test.py
+    pip install mysql-connector-python
+    python test2.py Aadhitya ssen15300
   displayName: 'Run a multi-line script'
   workingDirectory: '$(System.DefaultWorkingDirectory)/Azure/SQL'
