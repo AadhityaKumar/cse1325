@@ -4,7 +4,7 @@ db = pyodbc.connect(Trusted_Connection = 'yes', driver = '{SQL Server}', server 
 
 mycursor = db.cursor()
 
-with open("publication.sql", 'r') as file:
+with open("aadhitya.sql", 'r') as file:
     line = file.read()
     instructions = line.strip().split(";")
 
@@ -37,3 +37,4 @@ db.close()
 #Username: LAPTOP-I73C2NHS\axk88
 
 #Connection String: Data Source=LAPTOP-I73C2NHS\SQLEXPRESS;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Application Name="SQL Server Management Studio";Command Timeout=0
+
