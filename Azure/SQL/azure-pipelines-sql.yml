@@ -35,11 +35,26 @@ stages:
           pathToPublish: '$(Build.ArtifactStagingDirectory)'
           artifactName: drop
 
+  - stage: deploy
+    jobs:
+    - deployment: DeployTest
+      displayName: 'Deploy to Development Environment
+      pool:
+        vmImage: ubuntu-latest'
+      environment:
+        name: 'Aadhitya_Deployment_Server'
+        #resourceName: LAPTOP-I73C2NHS
+        resourceType: virtualMachine
+      strategy:
+        runOnce:
+          deploy:
+            steps:
+            - download: none
 
-      - task: SqlDacpacDeploymentOnMachineGroup@0
-        inputs:
-          TaskType: 'sqlQuery'
-          SqlFile: '$(Build.ArtifactStagingDirectory)\publication.sql'
-          ServerName: 'LAPTOP-I73C2NHS\SQLEXPRESS'
-          DatabaseName: 'aadhitya'
-          AuthScheme: 'windowsAuthentication'
+            - task: SqlDacpacDeploymentOnMachineGroup@0
+              inputs:
+                TaskType: 'sqlQuery'
+                SqlFile: '$(Build.ArtifactStagingDirectory)\publication.sql'
+                ServerName: 'LAPTOP-I73C2NHS\SQLEXPRESS'
+                DatabaseName: 'aadhitya'
+                AuthScheme: 'windowsAuthentication'
