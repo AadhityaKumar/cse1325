@@ -61,5 +61,5 @@ stages:
                 TaskType: 'sqlQuery'
                 SqlFile: 'C:\AzureDevops\sql\drop\publication.sql'
                 ServerName: 'LAPTOP-I73C2NHS\SQLEXPRESS'
-                DatabaseName: 'aadhitya'
+                DatabaseName: 'AppTest'
                 AuthScheme: 'windowsAuthentication'
