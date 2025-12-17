@@ -1,6 +1,6 @@
 import pyodbc
 
-db = pyodbc.connect(Trusted_Connection = 'yes', driver = '{SQL Server}', server = 'LAPTOP-I73C2NHS\SQLEXPRESS, 1433', database = 'aadhitya')
+db = pyodbc.connect(Trusted_Connection = 'yes', driver = '{SQL Server}', server = '192.168.1.147, 1433', database = 'aadhitya')
 
 mycursor = db.cursor()
 
@@ -37,5 +37,6 @@ db.close()
 #Username: LAPTOP-I73C2NHS\axk88
 
 #Connection String: Data Source=LAPTOP-I73C2NHS\SQLEXPRESS;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Application Name="SQL Server Management Studio";Command Timeout=0
+
 
 
