@@ -24,7 +24,7 @@ stages:
         inputs:
           sourceFolder: '$(System.DefaultWorkingDirectory)/Azure/SQL'
           contents: |      
-            **/publication.sql
+            **/aadhitya.sql
           targetFolder: '$(Build.ArtifactStagingDirectory)'
       - task: PublishBuildArtifacts@1
         inputs:
@@ -50,7 +50,7 @@ stages:
             - task: SqlDacpacDeploymentOnMachineGroup@0
               inputs:
                 TaskType: 'sqlQuery'
-                SqlFile: '$(Build.ArtifactStagingDirectory)\publication.sql'
+                SqlFile: '$(Build.ArtifactStagingDirectory)\aadhitya.sql'
                 ServerName: 'LAPTOP-I73C2NHS\SQLEXPRESS'
                 DatabaseName: 'aadhitya'
                 AuthScheme: 'windowsAuthentication'
