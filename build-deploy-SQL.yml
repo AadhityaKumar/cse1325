@@ -5,59 +5,18 @@
 
 trigger:
 - none
-stages:
-  - stage: build
-    jobs:
-    - job: run_build
-      pool:
-        vmImage: ubuntu-latest
-      steps:
-      - script: echo Hello, world!
-        displayName: 'Run a one-line script'
 
-      - script: |
-          echo Add other tasks to build, test, and deploy your project.
-          echo See https://aka.ms/yaml
-        displayName: 'Run a multi-line script'
-        
-      - task: CopyFiles@2
-        inputs:
-          sourceFolder: '$(System.DefaultWorkingDirectory)/Azure/SQL'
-          contents: |      
-            **/aadhitya.sql
-          targetFolder: '$(Build.ArtifactStagingDirectory)'
-      - task: PublishBuildArtifacts@1
-        inputs:
-          pathToPublish: '$(Build.ArtifactStagingDirectory)'
-          artifactName: drop
+pool:
+  vmImage: windows-latest
+  
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
 
-  - stage: deploy
-    jobs:
-    - deployment: DeployTest
-      displayName: 'Deploy to Development Environment
-      pool:
-        vmImage: ubuntu-latest'
-      environment:
-        name: 'Aadhitya_Deployment_Server'
-        #resourceName: LAPTOP-I73C2NHS
-        resourceType: virtualMachine
-      strategy:
-        runOnce:
-          deploy:
-            steps:
-            - download: none
-              
-            - script: |
-                echo Add other tasks to build, test, and deploy your project.
-                echo See https://aka.ms/yaml
-                python sql_test.py
-              displayName: 'Run a multi-line script'
-              workingDirectory: 'C:\AzureDevops'
-
-            - task: SqlDacpacDeploymentOnMachineGroup@0
-              inputs:
-                TaskType: 'sqlQuery'
-                SqlFile: 'C:\AzureDevops\aadhitya.sql'
-                ServerName: 'LAPTOP-I73C2NHS\SQLEXPRESS'
-                DatabaseName: 'aadhitya'
-                AuthScheme: 'windowsAuthentication'
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+    pip install pyodbc
+    python sql_test.py
+  displayName: 'Run a multi-line script'
+  workingDirectory: '$(System.DefaultWorkingDirectory)/Azure/SQL'
