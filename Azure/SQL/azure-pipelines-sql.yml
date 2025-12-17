@@ -51,10 +51,15 @@ stages:
             steps:
             - download: none
 
+            - task: DownloadPipelineArtifact@2
+              inputs:
+                buildType: 'current'
+                targetPath: 'C:\AzureDevops\sql'
+
             - task: SqlDacpacDeploymentOnMachineGroup@0
               inputs:
                 TaskType: 'sqlQuery'
-                SqlFile: '$(Build.ArtifactStagingDirectory)\publication.sql'
+                SqlFile: 'C:\AzureDevops\sql\publication.sql'
                 ServerName: 'LAPTOP-I73C2NHS\SQLEXPRESS'
                 DatabaseName: 'aadhitya'
                 AuthScheme: 'windowsAuthentication'
