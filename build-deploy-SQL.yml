@@ -16,7 +16,13 @@ steps:
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
-    pip install pyodbc
-    python sql_test.py
   displayName: 'Run a multi-line script'
   workingDirectory: '$(System.DefaultWorkingDirectory)/Azure/SQL'
+
+- task: SqlDacpacDeploymentOnMachineGroup@0
+  inputs:
+    TaskType: 'sqlQuery'
+    SqlFile: '$(System.DefaultWorkingDirectory)/Azure/SQL/publication.sql'
+    ServerName: 'LAPTOP-I73C2NHS\SQLEXPRESS'
+    DatabaseName: 'aadhitya'
+    AuthScheme: 'windowsAuthentication'
