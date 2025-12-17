@@ -11,7 +11,7 @@ stages:
     jobs:
     - job: run_build
       pool:
-        vmImage: ubuntu-latest
+        vmImage: windows-latest
       steps:
       - script: echo Hello, world!
         displayName: 'Run a one-line script'
@@ -35,3 +35,11 @@ stages:
           pathToPublish: '$(Build.ArtifactStagingDirectory)'
           artifactName: drop
 
+
+      - task: SqlDacpacDeploymentOnMachineGroup@0
+        inputs:
+          TaskType: 'sqlQuery'
+          SqlFile: '$(Build.ArtifactStagingDirectory)\publication.sql'
+          ServerName: 'LAPTOP-I73C2NHS\SQLEXPRESS'
+          DatabaseName: 'aadhitya'
+          AuthScheme: 'windowsAuthentication'
