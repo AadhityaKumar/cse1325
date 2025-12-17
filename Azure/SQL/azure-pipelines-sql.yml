@@ -19,38 +19,19 @@ stages:
       - script: |
           echo Add other tasks to build, test, and deploy your project.
           echo See https://aka.ms/yaml
-          javac Hello.java
-          java Hello
         displayName: 'Run a multi-line script'
-        workingDirectory: '$(System.DefaultWorkingDirectory)/P01/full_credit'
+        workingDirectory: '$(System.DefaultWorkingDirectory)/Azure/SQL'
 
+
+  
       - task: CopyFiles@2
         inputs:
-          sourceFolder: '$(System.DefaultWorkingDirectory)/P01/full_credit'
+          sourceFolder: '$(System.DefaultWorkingDirectory)/Azure/SQL'
           contents: |      
-            **/*.class
+            **/*.sql
           targetFolder: '$(Build.ArtifactStagingDirectory)'
       - task: PublishBuildArtifacts@1
         inputs:
           pathToPublish: '$(Build.ArtifactStagingDirectory)'
           artifactName: drop
 
-  - stage: deploy
-    jobs:
-    - deployment: DeployTest
-      displayName: 'Deploy to Development Environment
-      pool:
-        vmImage: ubuntu-latest'
-      environment:
-        name: 'Aadhitya_Deployment_Server'
-        #resourceName: LAPTOP-I73C2NHS
-        resourceType: virtualMachine
-      strategy:
-        runOnce:
-          deploy:
-            steps:
-            - download: none
-            - task: DownloadPipelineArtifact@2
-              inputs:
-                buildType: 'current'
-                targetPath: 'C:\AzureDevops\DeploymentTest'
