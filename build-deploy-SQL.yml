@@ -33,7 +33,7 @@ steps:
 - task: SqlDacpacDeploymentOnMachineGroup@0
   inputs:
     TaskType: 'sqlQuery'
-    SqlFile: 'publication.sql'
+    SqlFile: '$(Build.ArtifactStagingDirectory)\publication.sql'
     ServerName: 'LAPTOP-I73C2NHS\SQLEXPRESS'
     DatabaseName: 'aadhitya'
     AuthScheme: 'windowsAuthentication'
