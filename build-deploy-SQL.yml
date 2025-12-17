@@ -17,12 +17,23 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
-  workingDirectory: '$(System.DefaultWorkingDirectory)/Azure/SQL'
+
+
+- task: CopyFiles@2
+  inputs:
+    sourceFolder: '$(System.DefaultWorkingDirectory)/Azure/SQL'
+    contents: |      
+      **/publication.sql
+    targetFolder: '$(Build.ArtifactStagingDirectory)'
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathToPublish: '$(Build.ArtifactStagingDirectory)'
+    artifactName: drop
 
 - task: SqlDacpacDeploymentOnMachineGroup@0
   inputs:
     TaskType: 'sqlQuery'
-    SqlFile: '$(System.DefaultWorkingDirectory)/Azure/SQL/publication.sql'
+    SqlFile: 'publication.sql'
     ServerName: 'LAPTOP-I73C2NHS\SQLEXPRESS'
     DatabaseName: 'aadhitya'
     AuthScheme: 'windowsAuthentication'
