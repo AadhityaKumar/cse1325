@@ -13,13 +13,10 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
-- task: CondaEnvironment@0
-  inputs:
-    environmentName: 'my-env'
-
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
+    pip install pyodbc
     python sql_test.py
   displayName: 'Run a multi-line script'
   workingDirectory: '$(System.DefaultWorkingDirectory)/Azure/SQL'
