@@ -4,7 +4,6 @@ CREATE TABLE Patron (
     PatronName VARCHAR(50)
 );
 
-
 INSERT INTO Patron
 VALUES (1, 'Aadhitya');
 
