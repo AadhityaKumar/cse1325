@@ -66,6 +66,22 @@ stages:
 
             - task: SqlDacpacDeploymentOnMachineGroup@0
               inputs:
+                TaskType: 'sqlQuery'
+                SqlFile: 'C:\AzureDevops\sql\drop\patron.sql'
+                ServerName: 'LAPTOP-I73C2NHS\SQLEXPRESS'
+                DatabaseName: 'AppTest'
+                AuthScheme: 'windowsAuthentication'
+
+            - task: SqlDacpacDeploymentOnMachineGroup@0
+              inputs:
+                TaskType: 'sqlQuery'
+                SqlFile: 'C:\AzureDevops\sql\drop\rentals.sql'
+                ServerName: 'LAPTOP-I73C2NHS\SQLEXPRESS'
+                DatabaseName: 'AppTest'
+                AuthScheme: 'windowsAuthentication'
+
+            - task: SqlDacpacDeploymentOnMachineGroup@0
+              inputs:
                 TaskType: 'sqlInline'
                 InlineSql: 'SELECT *  From Publication;'
                 ServerName: 'LAPTOP-I73C2NHS\SQLEXPRESS'
