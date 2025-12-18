@@ -59,7 +59,7 @@ stages:
             - task: SqlDacpacDeploymentOnMachineGroup@0
               inputs:
                 TaskType: 'sqlQuery'
-                SqlFile: 'C:\AzureDevops\sql\drop\aadhitya.sql'
+                SqlFile: 'C:\AzureDevops\sql\drop\publication.sql'
                 ServerName: 'LAPTOP-I73C2NHS\SQLEXPRESS'
-                DatabaseName: 'aadhitya'
+                DatabaseName: 'AppTest'
                 AuthScheme: 'windowsAuthentication'
