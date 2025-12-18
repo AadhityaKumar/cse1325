@@ -16,6 +16,4 @@ VALUES (2, 'No Country for Old Men', 'Cormac McCarthy', '2005', 0);
 INSERT INTO Publication
 VALUES (3, 'Hunger Games', 'Suzanne Collins', '2008', 0);
 
-SELECT *
-FROM Publication;
 
