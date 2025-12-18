@@ -1,5 +1,6 @@
-SELECT PatronID FROM Patron;
+SELECT PatronID FROM Patron
 
-SELECT *  From Publication;
+SELECT *  From Publication
 
-SELECT * FROM Patron;
+
+SELECT * FROM Patron
