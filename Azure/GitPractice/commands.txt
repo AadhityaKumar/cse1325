@@ -20,6 +20,12 @@ git branch -M test
 
 git push -u origin test
 
+To merge:
+git checkout main
+git pull origin main
+git merge test
+git push origin main
+
 GIT Introduction:
 Https://www.youtube.com/watch?v=USjZcfj8yxE
 Https://www.youtube.com/watch?v=nhNq2kIvi9s
