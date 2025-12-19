@@ -19,3 +19,10 @@ git clone https://github.com/AadhityaKumar/CSE5311.git
 git branch -M test
 
 git push -u origin test
+
+GIT Introduction:
+Https://www.youtube.com/watch?v=USjZcfj8yxE
+Https://www.youtube.com/watch?v=nhNq2kIvi9s
+
+GIT Flow
+https://www.youtube.com/watch?v=6LhTe8Mz6jM
