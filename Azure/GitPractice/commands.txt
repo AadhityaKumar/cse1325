@@ -1,0 +1,21 @@
+*Go to desired directory
+
+git init
+
+git add test.py
+
+git commit -m "commit message"
+
+git remote add origin https://github.com/AadhityaKumar/CSE5311.git
+
+git branch -M main
+
+git remote -v
+
+git push -u origin main
+
+git clone https://github.com/AadhityaKumar/CSE5311.git
+
+git branch -M test
+
+git push -u origin test
