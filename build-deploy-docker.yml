@@ -35,3 +35,4 @@ stages:
         docker build -t hello-app .
         docker run hello-app
       displayName: 'Pull and Run Docker Image via Script'
+      workingDirectory: '$(System.DefaultWorkingDirectory)/Azure/dockertest'
