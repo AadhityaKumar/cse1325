@@ -23,7 +23,9 @@ stages:
     - task: Docker@2
       displayName: Build an image
       inputs:
-        command: build
+        containerRegistry: 'docker'
+        repository: AadhityaKumar/cse1325
+        command: buildandPush
         dockerfile: '$(Build.SourcesDirectory)/Azure/dockertest/Dockerfile'
         tags: |
           $(tag)
