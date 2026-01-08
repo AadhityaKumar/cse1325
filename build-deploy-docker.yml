@@ -29,3 +29,8 @@ stages:
         dockerfile: '$(Build.SourcesDirectory)/Azure/dockertest/Dockerfile'
         tags: |
           $(tag)
+
+    - script: |
+        docker build -t hello-app .
+        docker run hello-app
+      displayName: 'Pull and Run Docker Image via Script'
